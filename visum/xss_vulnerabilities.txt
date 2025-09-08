@@ -1,0 +1,1397 @@
+Scan Results Details
+Client DOM XSS
+Query Path:
+JavaScript\Cx\JavaScript High Risk\Client DOM XSS Version:3
+
+Categories
+OWASP Top 10 2013: A3-Cross-Site Scripting (XSS)
+FISMA 2014: Access Control
+NIST SP 800-53: SI-15 Information Output Filtering (P0)
+OWASP Top 10 2017: A7-Cross-Site Scripting (XSS)
+ASA Premium: ASA Premium
+CWE top 25: CWE top 25
+MOIS(KISA) Secure Coding 2021: MOIS(KISA) Verification and representation of input data
+OWASP ASVS: V05 Validation, Sanitization and Encoding
+OWASP Top 10 2021: A3-Injection
+PCI DSS v3.2.1: PCI DSS (3.2.1) - 6.5.7 - Cross-site scripting (XSS)
+SANS top 25: SANS top 25
+Top Tier: Top Tier
+PCI DSS v4.0: PCI DSS (4.0) - 6.2.4 Vulnerabilities in software development
+ASD STIG 5.3: APSC-DV-002490 - CAT I The application must protect from Cross-Site Scripting
+(XSS) vulnerabilities.
+Description
+Client DOM XSS\Path 1:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=2
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:04 PM
+The method = embeds untrusted data in generated output with href, at line 67 of x5m-webmain/apps/mobile5ka/src/layouts/DefaultLayout/BellNotification/BellNotification.tsx. This
+untrusted data is embedded into the output without proper sanitization or encoding, enabling
+an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webmain/apps/mobile5ka/src/layouts/Defaul
+tLayout/BellNotification/BellNotification.t
+sx
+
+x5m-webmain/apps/mobile5ka/src/layouts/Defaul
+tLayout/BellNotification/BellNotification.t
+sx
+
+Line
+
+76
+
+73
+
+Object
+
+origin
+
+href
+
+Code Snippet
+File Name
+x5m-webmain/apps/mobile5ka/src/layouts/DefaultLayout/BellNotification/BellNotification.t
+sx
+Method
+const BellLink: FC<{ children: React.ReactNode }> = ({ children }) => {
+
+PAGE 558 OF 723
+
+....
+76. url: `${window?.location?.origin}${route}`,
+....
+73. href={makeFiveAppLinkType({
+
+Client DOM XSS\Path 2:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=3
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:04 PM
+The method = embeds untrusted data in generated output with href, at line 32 of x5m-webmain/apps/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/LinksSandbox.tsx.
+This untrusted data is embedded into the output without proper sanitization or encoding,
+enabling an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webx5m-webmain/apps/mobile5ka/src/pages/Technic main/apps/mobile5ka/src/pages/Technic
+alPages/components/LinksSandbox/Links alPages/components/LinksSandbox/Links
+Sandbox.tsx
+Sandbox.tsx
+
+Line
+
+15
+
+37
+
+Object
+
+origin
+
+href
+
+Code Snippet
+File Name
+x5m-webmain/apps/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/Links
+Sandbox.tsx
+Method
+url: `${window.location.origin}/404`,
+....
+15. url: `${window.location.origin}/404`,
+
+File Name
+
+x5m-webmain/apps/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/Links
+Sandbox.tsx
+
+Method
+
+export const LinksSandbox = () => {
+....
+37. <a className={classes.link} href={TEST_URL}>
+
+Client DOM XSS\Path 3:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+PAGE 559 OF 723
+
+&pathid=4
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:04 PM
+The method deepLink; embeds untrusted data in generated output with href, at line 75 of x5mweb-main/apps/site5ka/public/web-mystery-shopper/join-by-referral.html. This untrusted data
+is embedded into the output without proper sanitization or encoding, enabling an attacker to
+inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/apps/site5ka/public/web- x5m-web-main/apps/site5ka/public/webmystery-shopper/join-by-referral.html
+mystery-shopper/join-by-referral.html
+
+Line
+
+34
+
+75
+
+Object
+
+href
+
+href
+
+Code Snippet
+File Name
+x5m-web-main/apps/site5ka/public/web-mystery-shopper/join-by-referral.html
+Method
+const params = new URL(window.location.href).searchParams;
+....
+34. const params = new URL(window.location.href).searchParams;
+
+File Name
+
+x5m-web-main/apps/site5ka/public/web-mystery-shopper/join-by-referral.html
+
+Method
+
+window.location.href = deepLink;
+....
+75. window.location.href = deepLink;
+
+Client DOM XSS\Path 4:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=5
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:04 PM
+The method deepLink; embeds untrusted data in generated output with href, at line 74 of x5mweb-main/apps/site5ka/public/web-mystery-shopper/deep-link.html. This untrusted data is
+embedded into the output without proper sanitization or encoding, enabling an attacker to
+inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/apps/site5ka/public/web- x5m-web-main/apps/site5ka/public/webmystery-shopper/deep-link.html
+mystery-shopper/deep-link.html
+
+Line
+
+32
+
+74
+
+Object
+
+href
+
+href
+
+PAGE 560 OF 723
+
+Code Snippet
+File Name
+x5m-web-main/apps/site5ka/public/web-mystery-shopper/deep-link.html
+Method
+const params = new URL(window.location.href).searchParams;
+....
+32. const params = new URL(window.location.href).searchParams;
+
+File Name
+
+x5m-web-main/apps/site5ka/public/web-mystery-shopper/deep-link.html
+
+Method
+
+window.location.href = deepLink;
+....
+74. window.location.href = deepLink;
+
+Stored XSS
+Query Path:
+JavaScript\Cx\JavaScript Server Side Vulnerabilities\Stored XSS Version:2
+
+Categories
+OWASP Top 10 2013: A3-Cross-Site Scripting (XSS)
+FISMA 2014: System And Information Integrity
+NIST SP 800-53: SI-15 Information Output Filtering (P0)
+OWASP Top 10 2017: A7-Cross-Site Scripting (XSS)
+ASA Premium: ASA Premium
+CWE top 25: CWE top 25
+MOIS(KISA) Secure Coding 2021: MOIS(KISA) Verification and representation of input data
+OWASP ASVS: V05 Validation, Sanitization and Encoding
+OWASP Top 10 2021: A3-Injection
+PCI DSS v3.2.1: PCI DSS (3.2.1) - 6.5.7 - Cross-site scripting (XSS)
+SANS top 25: SANS top 25
+Top Tier: Top Tier
+PCI DSS v4.0: PCI DSS (4.0) - 6.2.4 Vulnerabilities in software development
+ASD STIG 5.3: APSC-DV-002490 - CAT I The application must protect from Cross-Site Scripting
+(XSS) vulnerabilities.
+Base Preset: Base Preset
+Description
+Stored XSS\Path 1:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=6
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:09 PM
+The method async embeds untrusted data in generated output with write, at line 15 of x5mwebmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/getLargeEdadealF
+eed.ts. This untrusted data is embedded into the output without proper sanitization or
+encoding, enabling an attacker to inject malicious code into the generated web-page.
+The attacker would be able to alter the returned web page by saving malicious data in a datastore ahead of time. The attacker's modified data is then read from the database by the async
+PAGE 561 OF 723
+
+method with find, at line 15 of x5m-webmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/getLargeEdadealF
+eed.ts. This untrusted data then flows through the code straight to the output web page,
+without sanitization.
+This can enable a Stored Cross-Site Scripting (XSS) attack.
+Source
+
+Destination
+
+File
+
+x5m-webmain/apps/perekrestok_web/server/cont
+rollers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+
+x5m-webmain/apps/perekrestok_web/server/cont
+rollers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+
+Line
+
+55
+
+62
+
+Object
+
+find
+
+write
+
+Code Snippet
+File Name
+x5m-webmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+Method
+export const getLargeEdadealFeed = async (feedName: string, res: Response)
+=> {
+....
+55. .find()
+....
+62. res.write(`{"catalogs":${catalogsString},"offers":[`);
+
+Stored XSS\Path 2:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=7
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:09 PM
+The method async embeds untrusted data in generated output with write, at line 15 of x5mwebmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/getLargeEdadealF
+eed.ts. This untrusted data is embedded into the output without proper sanitization or
+encoding, enabling an attacker to inject malicious code into the generated web-page.
+The attacker would be able to alter the returned web page by saving malicious data in a datastore ahead of time. The attacker's modified data is then read from the database by the async
+method with find, at line 15 of x5m-webmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/getLargeEdadealF
+eed.ts. This untrusted data then flows through the code straight to the output web page,
+without sanitization.
+This can enable a Stored Cross-Site Scripting (XSS) attack.
+File
+
+Source
+
+Destination
+
+x5m-webmain/apps/perekrestok_web/server/cont
+rollers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+
+x5m-webmain/apps/perekrestok_web/server/cont
+rollers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+
+PAGE 562 OF 723
+
+Line
+
+72
+
+84
+
+Object
+
+find
+
+write
+
+Code Snippet
+File Name
+x5m-webmain/apps/perekrestok_web/server/controllers/FeedGenerator/feeds/edadeal/get
+LargeEdadealFeed.ts
+Method
+export const getLargeEdadealFeed = async (feedName: string, res: Response)
+=> {
+....
+72. .find(nextKey ? { _id: { $gt: nextKey } } : {})
+....
+84. res.write((i && offersString.length > 0 ? ',' : '') +
+offersString);
+
+Client DOM Stored Code Injection
+Query Path:
+JavaScript\Cx\JavaScript High Risk\Client DOM Stored Code Injection Version:1
+
+Categories
+OWASP Top 10 2013: A1-Injection
+FISMA 2014: Configuration Management
+NIST SP 800-53: SI-10 Information Input Validation (P1)
+OWASP Top 10 2017: A1-Injection
+ASA Premium: ASA Premium
+CWE top 25: CWE top 25
+MOIS(KISA) Secure Coding 2021: MOIS(KISA) Verification and representation of input data
+OWASP ASVS: V05 Validation, Sanitization and Encoding
+OWASP Top 10 2021: A3-Injection
+PCI DSS v3.2.1: PCI DSS (3.2.1) - 6.5.1 - Injection flaws - particularly SQL injection
+SANS top 25: SANS top 25
+Top Tier: Top Tier
+PCI DSS v4.0: PCI DSS (4.0) - 6.2.4 Vulnerabilities in software development
+ASD STIG 5.3: APSC-DV-002510 - CAT I The application must protect from command injection.
+Description
+Client DOM Stored Code Injection\Path 1:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=1
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:54:34 PM
+The method useEffect embeds untrusted data in generated output with handleStorageChange,
+at line 44 of x5m-web-main/apps/mobile5ka/src/hooks/useLocalStorageEffect.ts. This untrusted
+data is embedded into the output without proper sanitization or encoding, enabling an attacker
+to inject malicious code into the generated web-page.
+The attacker can inject the malicious payload into the victim client, via client-side storage
+mechanism getItem. This is read by the client in the deps.map method, at line 19 of x5m-web-
+
+PAGE 563 OF 723
+
+main/apps/mobile5ka/src/hooks/useLocalStorageEffect.ts. The client evaluates this code, and
+executes it.
+Source
+
+Destination
+
+File
+
+x5m-webx5m-webmain/apps/mobile5ka/src/hooks/useLoca main/apps/mobile5ka/src/hooks/useLoca
+lStorageEffect.ts
+lStorageEffect.ts
+
+Line
+
+20
+
+49
+
+Object
+
+getItem
+
+handleStorageChange
+
+Code Snippet
+File Name
+x5m-web-main/apps/mobile5ka/src/hooks/useLocalStorageEffect.ts
+Method
+return deps.map((key) => {
+....
+20. const item = localStorage.getItem(key);
+
+File Name
+
+x5m-web-main/apps/mobile5ka/src/hooks/useLocalStorageEffect.ts
+
+Method
+
+useEffect(() => {
+....
+49. window.addEventListener('storage', handleStorageChange);
+
+Reflected XSS
+Query Path:
+JavaScript\Cx\JavaScript Server Side Vulnerabilities\Reflected XSS Version:3
+
+Categories
+OWASP Top 10 2013: A3-Cross-Site Scripting (XSS)
+FISMA 2014: System And Information Integrity
+NIST SP 800-53: SI-15 Information Output Filtering (P0)
+OWASP Top 10 2017: A7-Cross-Site Scripting (XSS)
+ASA Premium: ASA Premium
+CWE top 25: CWE top 25
+MOIS(KISA) Secure Coding 2021: MOIS(KISA) Verification and representation of input data
+OWASP ASVS: V05 Validation, Sanitization and Encoding
+OWASP Top 10 2021: A3-Injection
+PCI DSS v3.2.1: PCI DSS (3.2.1) - 6.5.7 - Cross-site scripting (XSS)
+SANS top 25: SANS top 25
+Top Tier: Top Tier
+PCI DSS v4.0: PCI DSS (4.0) - 6.2.4 Vulnerabilities in software development
+ASD STIG 5.3: APSC-DV-002490 - CAT I The application must protect from Cross-Site Scripting
+(XSS) vulnerabilities.
+Description
+Reflected XSS\Path 1:
+Severity
+High
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=226
+
+PAGE 564 OF 723
+
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 3:30:19 PM
+The method app.get embeds untrusted data in generated output with send, at line 97 of x5mweb-main/apps/perekrestok_web/server/index.tsx. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+The attacker would be able to alter the returned web page by simply providing modified data in
+the user input ip, which is read by the app.get method at line 97 of x5m-webmain/apps/perekrestok_web/server/index.tsx. This input then flows through the code straight
+to the output web page, without sanitization.
+This can enable a Reflected Cross-Site Scripting (XSS) attack.
+Source
+
+Destination
+
+File
+
+x5m-webx5m-webmain/apps/perekrestok_web/server/inde main/apps/perekrestok_web/server/inde
+x.tsx
+x.tsx
+
+Line
+
+106
+
+98
+
+Object
+
+ip
+
+send
+
+Code Snippet
+File Name
+x5m-web-main/apps/perekrestok_web/server/index.tsx
+Method
+app.get('/status', (req, res) =>
+....
+106. ip: req.ip,
+....
+98. res.send({
+
+Client Potential XSS
+Query Path:
+JavaScript\Cx\JavaScript Medium Threat\Client Potential XSS Version:2
+
+Categories
+OWASP Top 10 2013: A3-Cross-Site Scripting (XSS)
+FISMA 2014: Access Control
+NIST SP 800-53: SI-15 Information Output Filtering (P0)
+OWASP Top 10 2017: A7-Cross-Site Scripting (XSS)
+CWE top 25: CWE top 25
+MOIS(KISA) Secure Coding 2021: MOIS(KISA) Verification and representation of input data
+OWASP ASVS: V05 Validation, Sanitization and Encoding
+OWASP Top 10 2021: A3-Injection
+PCI DSS v3.2.1: PCI DSS (3.2.1) - 6.5.7 - Cross-site scripting (XSS)
+SANS top 25: SANS top 25
+PCI DSS v4.0: PCI DSS (4.0) - 6.2.4 Vulnerabilities in software development
+ASD STIG 5.3: APSC-DV-002490 - CAT I The application must protect from Cross-Site Scripting
+(XSS) vulnerabilities.
+Description
+Client Potential XSS\Path 1:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WIN-
+
+PAGE 565 OF 723
+
+UL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=13
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method = embeds untrusted data in generated output with dangerouslySetInnerHTML, at
+line 40 of x5m-web-main/apps/perekrestok_web/src/atomic/pages/Trademark.tsx. This
+untrusted data is embedded into the output without proper sanitization or encoding, enabling
+an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webx5m-webmain/apps/perekrestok_web/src/atomic/ main/apps/perekrestok_web/src/atomic/
+pages/Trademark.tsx
+pages/Trademark.tsx
+
+Line
+
+90
+
+90
+
+Object
+
+text
+
+dangerouslySetInnerHTML
+
+Code Snippet
+File Name
+x5m-web-main/apps/perekrestok_web/src/atomic/pages/Trademark.tsx
+Method
+const TrademarkComponent = ({ className }: Props) => {
+....
+90. dangerouslySetInnerHTML={{ __html: trademark.text }}
+
+Client Potential XSS\Path 2:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=14
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method = embeds untrusted data in generated output with dangerouslySetInnerHTML, at
+line 22 of x5m-web-main/lib/sharedcomponents/src/components/CVM/CurrentOfferCard/CurrentOfferCardBase.tsx. This untrusted
+data is embedded into the output without proper sanitization or encoding, enabling an attacker
+to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/sharedx5m-web-main/lib/sharedcomponents/src/components/CVM/Curre components/src/components/CVM/Curre
+ntOfferCard/CurrentOfferCardBase.tsx
+ntOfferCard/CurrentOfferCardBase.tsx
+
+Line
+
+29
+
+82
+
+Object
+
+text
+
+dangerouslySetInnerHTML
+
+Code Snippet
+File Name
+x5m-web-main/lib/sharedcomponents/src/components/CVM/CurrentOfferCard/CurrentOfferCardBase.tsx
+
+PAGE 566 OF 723
+
+Method
+
+export const CurrentOfferCardBase: FC<CurrentOfferCardBaseProps> = (props)
+=> {
+....
+29. text = '',
+....
+82. {text && <Box css={styles.description} dangerouslySetInnerHTML={{
+__html: text }} />}
+
+Client Potential XSS\Path 3:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=15
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method { embeds untrusted data in generated output with dangerouslySetInnerHTML, at
+line 83 of x5m-webmain/apps/perekrestok_web/src/atomic/organisms/catalog/CatalogContentGroup/index.tsx.
+This untrusted data is embedded into the output without proper sanitization or encoding,
+enabling an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webmain/apps/perekrestok_web/src/atomic/
+organisms/catalog/CatalogContentGroup
+/index.tsx
+
+x5m-webmain/apps/perekrestok_web/src/atomic/
+organisms/catalog/CatalogContentGroup
+/index.tsx
+
+Line
+
+123
+
+206
+
+Object
+
+text
+
+dangerouslySetInnerHTML
+
+Code Snippet
+File Name
+x5m-webmain/apps/perekrestok_web/src/atomic/organisms/catalog/CatalogContentGroup
+/index.tsx
+Method
+}: CatalogContentGroupProps) => {
+....
+123.
+....
+206.
+
+const metaText = meta?.text || '';
+dangerouslySetInnerHTML={{ __html: metaText }}
+
+Client Potential XSS\Path 4:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=16
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+
+PAGE 567 OF 723
+
+The method { embeds untrusted data in generated output with dangerouslySetInnerHTML, at
+line 96 of x5m-webmain/apps/perekrestok_web/src/atomic/organisms/catalog/CatalogContent/index.tsx. This
+untrusted data is embedded into the output without proper sanitization or encoding, enabling
+an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webmain/apps/perekrestok_web/src/atomic/
+organisms/catalog/CatalogContent/index
+.tsx
+
+x5m-webmain/apps/perekrestok_web/src/atomic/
+organisms/catalog/CatalogContent/index
+.tsx
+
+Line
+
+146
+
+248
+
+Object
+
+text
+
+dangerouslySetInnerHTML
+
+Code Snippet
+File Name
+x5m-webmain/apps/perekrestok_web/src/atomic/organisms/catalog/CatalogContent/index
+.tsx
+Method
+}: CatalogContentProps) => {
+....
+146. const metaText = meta?.text || '';
+....
+248. <div className="catalog-content__text" dangerouslySetInnerHTML={{
+__html: metaText }} />
+
+Client Potential XSS\Path 5:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=17
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method = embeds untrusted data in generated output with dangerouslySetInnerHTML, at
+line 24 of x5m-webmain/apps/mobile5ka/src/pages/SpecialOffers/components/CurrentSpecialOffer.tsx. This
+untrusted data is embedded into the output without proper sanitization or encoding, enabling
+an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-webmain/apps/mobile5ka/src/pages/Special
+Offers/components/CurrentSpecialOffer.t
+sx
+
+x5m-webmain/apps/mobile5ka/src/pages/Special
+Offers/components/CurrentSpecialOffer.t
+sx
+
+Line
+
+31
+
+94
+
+Object
+
+text
+
+dangerouslySetInnerHTML
+
+Code Snippet
+
+PAGE 568 OF 723
+
+File Name
+
+x5m-webmain/apps/mobile5ka/src/pages/SpecialOffers/components/CurrentSpecialOffer.t
+sx
+const CurrentSpecialOffer: FC<ICurrentSpecialOffer> = ({ offer }) => {
+
+Method
+
+....
+31. text,
+....
+94. <p dangerouslySetInnerHTML={{ __html: sanitizeHTML(text) }}></p>
+
+Client Potential XSS\Path 6:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=18
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method Yf embeds untrusted data in generated output with body, at line 79 of x5m-webmain/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the output
+without proper sanitization or encoding, enabling an attacker to inject malicious code into the
+generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+79
+
+Object
+
+value
+
+body
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+function Yf(a){if(ja("MutationObserver",a.MutationObserver)){var
+b=Uf(a).children,c=new
+a.MutationObserver(function(){N(function(d){J(b[d],"window.window")||delete
+b[d]},Wb(b))});Rf(a)(Qf(t,function(){c.observe(a.document.body,{subtree:!0,chi
+ldList:!0})}))}}
+
+PAGE 569 OF 723
+
+....
+79. function Yf(a){if(ja("MutationObserver",a.MutationObserver)){var
+b=Uf(a).children,c=new
+a.MutationObserver(function(){N(function(d){J(b[d],"window.window")||del
+ete
+b[d]},Wb(b))});Rf(a)(Qf(t,function(){c.observe(a.document.body,{subtree:
+!0,childList:!0})}))}}
+
+Client Potential XSS\Path 7:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=19
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method Qg embeds untrusted data in generated output with appendChild, at line 97 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+97
+
+Object
+
+value
+
+appendChild
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...=a.document,e=c("script");e.src=b.src;e.type=b.type||"text/javascript";e.char
+set=b.charset||"utf-8";e.async=b.async||!0;try{var
+f=d.getElemeappendChilde("head")[0];if(!f){var
+g=d.getElementsByTagName("html")[0];f=c("head");g&&g.appendChild(f)}f.in...
+
+PAGE 570 OF 723
+
+....
+97.
+...=a.document,e=c("script");e.src=b.src;e.type=b.type||"text/javascript
+";e.charset=b.charset||"utf-8";e.async=b.async||!0;try{var
+f=d.getElemeappendChilde("head")[0];if(!f){var
+g=d.getElementsByTagName("html")[0];f=c("head");g&&g.appendChild(f)}f.in
+...
+
+Client Potential XSS\Path 8:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=20
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method ch embeds untrusted data in generated output with appendChild, at line 103 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+103
+
+Object
+
+value
+
+appendChild
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...C(h,rf),C(null,e),A([a,l],Mf));k=O({},d.ea);delete
+k.wmode;h.src=Wg(c,d,k);bc(a)&&(O(h.style,{position:"absolute",visibility:"hidd
+en",width:appendChildt:"0px"}),g.appendChild(h))})}
+....
+103. ...C(h,rf),C(null,e),A([a,l],Mf));k=O({},d.ea);delete
+k.wmode;h.src=Wg(c,d,k);bc(a)&&(O(h.style,{position:"absolute",visibilit
+y:"hidden",width:appendChildt:"0px"}),g.appendChild(h))})}
+
+PAGE 571 OF 723
+
+Client Potential XSS\Path 9:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=21
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method Qg embeds untrusted data in generated output with insertBefore, at line 97 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+97
+
+Object
+
+value
+
+insertBefore
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...=a.document,e=c("script");e.src=b.src;e.type=b.type||"text/javascript";e.char
+set=b.charset||"utf-8";e.async=b.async||!0;try{var
+f=d.getElemeinsertBefore("head")[0];if(!f){var
+g=d.getElementsByTagName("html")[0];f=c("head");g&&g.appendChild(f)}f.in...
+....
+97.
+...=a.document,e=c("script");e.src=b.src;e.type=b.type||"text/javascript
+";e.charset=b.charset||"utf-8";e.async=b.async||!0;try{var
+f=d.getElemeinsertBefore("head")[0];if(!f){var
+g=d.getElementsByTagName("html")[0];f=c("head");g&&g.appendChild(f)}f.in
+...
+
+Client Potential XSS\Path 10:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINPAGE 572 OF 723
+
+UL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=22
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method yl embeds untrusted data in generated output with appendChild, at line 206 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+206
+
+Object
+
+value
+
+appendChild
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...ition: absolute; left: -999px; top: -999px; width: 1px; height:
+1px;"></iframe>';var f=d.firstChild;f.onload=function(){var
+h=c("meta");h.seappendChild"http-equiv","Content-SecurityPolicy");h.setAttribute("content","script-src *");f.contentWindow.document.hea...
+....
+206. ...ition: absolute; left: -999px; top: -999px; width: 1px; height:
+1px;"></iframe>';var f=d.firstChild;f.onload=function(){var
+h=c("meta");h.seappendChild"http-equiv","Content-SecurityPolicy");h.setAttribute("content","script-src
+*");f.contentWindow.document.hea...
+
+Client Potential XSS\Path 11:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=23
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+
+PAGE 573 OF 723
+
+The method yl embeds untrusted data in generated output with appendChild, at line 206 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+206
+
+Object
+
+value
+
+appendChild
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...ition: absolute; left: -999px; top: -999px; width: 1px; height:
+1px;"></iframe>';var f=d.firstChild;f.onload=function(){var
+h=c("meta");h.seappendChild"http-equiv","Content-SecurityPolicy");h.setAttribute("content","script-src *");f.contentWindow.document.hea...
+....
+206. ...ition: absolute; left: -999px; top: -999px; width: 1px; height:
+1px;"></iframe>';var f=d.firstChild;f.onload=function(){var
+h=c("meta");h.seappendChild"http-equiv","Content-SecurityPolicy");h.setAttribute("content","script-src
+*");f.contentWindow.document.hea...
+
+Client Potential XSS\Path 12:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=24
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method yl embeds untrusted data in generated output with appendChild, at line 206 of
+x5m-web-main/lib/base/yandex-metrika/watch.js. This untrusted data is embedded into the
+output without proper sanitization or encoding, enabling an attacker to inject malicious code
+into the generated web-page.
+Source
+
+Destination
+
+PAGE 574 OF 723
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+207
+
+Object
+
+value
+
+appendChild
+
+Code Snippet
+File Name
+x5m-web-main/lib/base/yandex-metrika/watch.js
+Method
+...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return a
+instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+....
+1. ...peof Symbol&&Symbol.iterator&&a[Symbol.iterator];return
+b?b.call(a):{next:aa(a)}}function ba(a){for(var
+b,c=[];!(b=a.next()).done;)c.push(b.value);return c}function r(a){return
+a instanceof Array?a:ba(n(a))}var ca={construct:"Metrika...
+
+File Name
+
+x5m-web-main/lib/base/yandex-metrika/watch.js
+
+Method
+
+...ition: absolute; left: -999px; top: -999px; width: 1px; height:
+1px;"></iframe>';var f=d.firstChild;f.onload=function(){var
+h=c("meta");h.seappendChild"http-equiv","Content-SecurityPolicy");h.setAttribute("content","script-src *");f.contentWindow.document.hea...
+....
+207.
+null;d.attachShadow?g=d.attachShadow({mode:"open"}):d.createShadowRoot?g
+=d.createShadowRoot():d.webkitCreateShadowRoot&&(g=d.webkitCreateShadowR
+oot());g?g.appendChild(f):(e.appendChild(f),a._ym__remoteIframeContainer
+=f)}}}
+
+Client Potential XSS\Path 13:
+Severity
+Medium
+Result State
+To Verify
+Online Results
+http://WINUL10AKKDTSU/CxWebClient/ViewerMain.aspx?scanid=1000031&projectid=29
+&pathid=25
+Result Comment
+Status
+New
+Detection Date
+8/18/2025 2:56:18 PM
+The method null;d.attachShadow?g=d.attachShadow embeds untrusted data in generated
+output with appendChild, at line 207 of x5m-web-main/lib/base/yandex-metrika/watch.js. This
+untrusted data is embedded into the output without proper sanitization or encoding, enabling
+an attacker to inject malicious code into the generated web-page.
+Source
+
+Destination
+
+File
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+x5m-web-main/lib/base/yandexmetrika/watch.js
+
+Line
+
+1
+
+207
+
+Object
+
+value
+
+appendChild
+PAGE 575 OF 723
+
+

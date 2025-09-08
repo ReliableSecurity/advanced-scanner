@@ -1,0 +1,194 @@
+nmap --script ssl-enum-ciphers,ssl-cert,ssl-date,ssl-heartbleed,ssl-poodle,ssl-dh-params -p 443,8443,9443 213.79.86.130 213.79.86.131
+Starting Nmap 7.94SVN ( https://nmap.org ) at 2025-08-13 15:58 MSK
+Nmap scan report for 213.79.86.130
+Host is up (0.037s latency).
+
+PORT     STATE  SERVICE
+443/tcp  open   https
+| ssl-enum-ciphers:
+|   TLSv1.0:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.1:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.2:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|       TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (dh 2048) - A
+|       TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (dh 2048) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (ecdh_x25519) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.3:
+|     ciphers:
+|       TLS_AKE_WITH_AES_256_GCM_SHA384 (secp384r1) - A
+|       TLS_AKE_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|     cipher preference: server
+|_  least strength: C
+|_ssl-date: TLS randomness does not represent time
+| ssl-cert: Subject: commonName=*.mosgortrans.ru
+| Subject Alternative Name: DNS:*.mosgortrans.ru, DNS:mosgortrans.ru
+| Issuer: commonName=GlobalSign GCC R3 DV TLS CA 2020/organizationName=GlobalSign nv-sa/countryName=BE
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2024-12-10T00:14:18
+| Not valid after:  2026-01-11T00:14:17
+| MD5:   e411:9433:6570:9e63:5523:c634:f186:69d4
+|_SHA-1: 721e:0fc9:b9f2:a840:4a8e:2276:1758:402f:0e3b:abba
+8443/tcp closed https-alt
+9443/tcp closed tungsten-https
+
+Nmap scan report for 213.79.86.131
+Host is up (0.037s latency).
+
+PORT     STATE SERVICE
+443/tcp  open  https
+|_ssl-date: TLS randomness does not represent time
+| ssl-enum-ciphers:
+|   TLSv1.2:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (ecdh_x25519) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (ecdh_x25519) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (ecdh_x25519) - A
+|     compressors:
+|       NULL
+|     cipher preference: server
+|   TLSv1.3:
+|     ciphers:
+|       TLS_AKE_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|       TLS_AKE_WITH_AES_256_GCM_SHA384 (ecdh_x25519) - A
+|       TLS_AKE_WITH_CHACHA20_POLY1305_SHA256 (ecdh_x25519) - A
+|     cipher preference: server
+|_  least strength: A
+| ssl-cert: Subject: commonName=*.mosgortrans.ru
+| Subject Alternative Name: DNS:*.mosgortrans.ru, DNS:mosgortrans.ru
+| Issuer: commonName=GlobalSign GCC R3 DV TLS CA 2020/organizationName=GlobalSign nv-sa/countryName=BE
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-12-07T11:13:04
+| Not valid after:  2024-01-08T11:13:03
+| MD5:   668c:60d8:ea14:10a1:2c44:f995:328d:c9a8
+|_SHA-1: a230:e0a9:9bd6:378f:45cb:0e22:b1d5:60fe:df8b:f262
+8443/tcp open  https-alt
+| ssl-enum-ciphers:
+|   TLSv1.2:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp256r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (secp256r1) - A
+|     compressors:
+|       NULL
+|     cipher preference: server
+|_  least strength: A
+| ssl-cert: Subject: commonName=*.mosgortrans.ru
+| Subject Alternative Name: DNS:*.mosgortrans.ru, DNS:mosgortrans.ru
+| Issuer: commonName=GlobalSign GCC R3 DV TLS CA 2020/organizationName=GlobalSign nv-sa/countryName=BE
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2022-12-07T11:13:04
+| Not valid after:  2024-01-08T11:13:03
+| MD5:   668c:60d8:ea14:10a1:2c44:f995:328d:c9a8
+|_SHA-1: a230:e0a9:9bd6:378f:45cb:0e22:b1d5:60fe:df8b:f262
+9443/tcp open  tungsten-https
+|_ssl-date: TLS randomness does not represent time
+| ssl-enum-ciphers:
+|   TLSv1.0:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.1:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.2:
+|     ciphers:
+|       TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|       TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (dh 2048) - A
+|       TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (dh 2048) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (ecdh_x25519) - A
+|       TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (secp384r1) - A
+|       TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (ecdh_x25519) - A
+|       TLS_RSA_WITH_AES_256_GCM_SHA384 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_GCM_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA256 (rsa 2048) - A
+|       TLS_RSA_WITH_AES_256_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_AES_128_CBC_SHA (rsa 2048) - A
+|       TLS_RSA_WITH_3DES_EDE_CBC_SHA (rsa 2048) - C
+|     compressors:
+|       NULL
+|     cipher preference: server
+|     warnings:
+|       64-bit block cipher 3DES vulnerable to SWEET32 attack
+|   TLSv1.3:
+|     ciphers:
+|       TLS_AKE_WITH_AES_256_GCM_SHA384 (secp384r1) - A
+|       TLS_AKE_WITH_AES_128_GCM_SHA256 (ecdh_x25519) - A
+|     cipher preference: server
+|_  least strength: C
+| ssl-cert: Subject: commonName=*.mosgortrans.ru
+| Subject Alternative Name: DNS:*.mosgortrans.ru, DNS:mosgortrans.ru
+| Issuer: commonName=GlobalSign GCC R3 DV TLS CA 2020/organizationName=GlobalSign nv-sa/countryName=BE
+| Public Key type: rsa
+| Public Key bits: 2048
+| Signature Algorithm: sha256WithRSAEncryption
+| Not valid before: 2023-12-09T05:04:43
+| Not valid after:  2025-01-09T05:04:42
+| MD5:   e964:b859:a4d6:bae5:8196:5aba:f384:b3a4
+|_SHA-1: 39d3:ab92:acfe:8965:36e3:1c0b:ab08:f258:8c26:42ec
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 8.50 seconds

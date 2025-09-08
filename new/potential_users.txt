@@ -1,0 +1,39 @@
+# Potential users identified through CVE-2018-15473 timing attack
+# Server 213.79.86.130:8022 anomalies
+root
+admin
+postgres
+webmaster
+games
+messagebus
+uuidd
+nagios
+prometheus
+flink
+haproxy
+consul
+
+# Server 213.79.86.133:40044 anomalies
+guest
+postgres
+ftp
+man
+syslog
+uuidd
+centos
+parrot
+logstash
+kibana
+telegraf
+
+# Common anomalies (appearing on both servers)
+postgres
+uuidd
+
+# Dionis standard users (from original list)
+dionis
+user
+test
+admin
+root
+guest

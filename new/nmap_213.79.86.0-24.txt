@@ -1,0 +1,83 @@
+Nmap scan report for 213.79.86.130
+Host is up (0.066s latency).
+Not shown: 63716 closed tcp ports (reset), 1817 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+443/tcp  open  https
+8022/tcp open  oa-system
+
+Nmap scan report for 213.79.86.131
+Not shown: 65461 closed tcp ports (reset), 70 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+443/tcp  open  https
+4172/tcp open  pcoip
+8443/tcp open  https-alt
+9443/tcp open  tungsten-https
+
+Nmap scan report for 213.79.86.132
+Host is up (0.050s latency).
+Not shown: 59058 closed tcp ports (reset), 6476 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+8301/tcp open  amberon
+
+Nmap scan report for 213.79.86.133
+Host is up (0.049s latency).
+Not shown: 59062 closed tcp ports (reset), 6472 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+40044/tcp open  unknown
+
+Nmap done: 2 IP addresses (2 hosts up) scanned in 318.46 seconds
+
+map scan report for 213.79.86.136
+Host is up (0.045s latency).
+Not shown: 60368 closed tcp ports (reset), 5166 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+443/tcp open  https
+
+Nmap scan report for 213.79.86.137
+Host is up (0.045s latency).
+Not shown: 64605 closed tcp ports (reset), 929 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+443/tcp open  https
+
+Nmap scan report for 213.79.86.138
+Host is up (0.036s latency).
+Not shown: 64817 closed tcp ports (reset), 716 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+8301/tcp open  amberon
+8304/tcp open  unknown
+
+Nmap scan report for 213.79.86.139
+Host is up (0.059s latency).
+Not shown: 64877 closed tcp ports (reset), 657 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT     STATE SERVICE
+8301/tcp open  amberon
+
+Nmap scan report for 213.79.86.140
+Host is up (0.058s latency).
+Not shown: 65216 closed tcp ports (reset), 315 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT      STATE SERVICE
+443/tcp   open  https
+44334/tcp open  tinyfw
+44344/tcp open  unknown
+44444/tcp open  cognex-dataman
+
+Nmap scan report for 213.79.86.141
+Host is up (0.057s latency).
+Not shown: 65195 closed tcp ports (reset), 339 filtered tcp ports (no-response)
+Some closed ports may be reported as filtered due to --defeat-rst-ratelimit
+PORT    STATE SERVICE
+443/tcp open  https
+
+Stats: 5:02:12 elapsed; 0 hosts completed (1 up), 1 undergoing Connect Scan
+Connect Scan Timing: About 68.51% done; ETC: 23:18 (2:18:54 remaining)
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 26401.73 seconds

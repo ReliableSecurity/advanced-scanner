@@ -1,0 +1,1 @@
+# Nmap 7.94SVN scan initiated Tue Aug 19 00:01:54 2025 as: nmap -Pn -sV --script vulners -p- --open -n -T2 -oA /home/akuma/Desktop/projects/new/nmap_additional_targets 213.79.86.145 213.79.86.146 213.79.86.147 213.79.86.148 213.79.86.149 213.79.86.150 213.79.86.183 213.79.86.184 213.79.86.185 213.79.86.186 213.79.86.187 213.79.86.188 213.79.86.189 213.79.86.190

