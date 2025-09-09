@@ -38,6 +38,7 @@ declare -gr BOLD='\033[1m'
 
 # Массивы подсетей (по умолчанию пустой - пользователь должен указать)
 DEFAULT_SUBNETS=()
+CLI_SUBNETS=()  # Подсети переданные через --subnet
 
 # Массивы модулей по критичности
 declare -a CRITICAL_MODULES=(
@@ -172,6 +173,12 @@ load_configuration() {
     else
         echo "[WARN] Configuration file not found, using defaults"
         create_default_config
+    fi
+    
+    # CLI подсети имеют приоритет над конфигом
+    if [[ ${#CLI_SUBNETS[@]} -gt 0 ]]; then
+        SUBNETS=("${CLI_SUBNETS[@]}")
+        echo "[INFO] Using CLI subnets: ${SUBNETS[*]}"
     fi
     
     # Validate that subnets are configured
@@ -311,6 +318,119 @@ perform_service_discovery() {
     perform_port_scan "dns" "53"
     
     log "SUCCESS" "Service discovery completed"
+    
+    # Проверка доступа с кредами (если указаны)
+    if [[ "$AUTHENTICATED_SCAN" == "true" ]] && [[ -n "$USERNAME" ]] && [[ -n "$PASSWORD" ]]; then
+        test_credential_access
+    fi
+}
+
+# ========================================================================
+# ПРОВЕРКА ДОСТУПА С КРЕДАМИ
+# ========================================================================
+
+test_credential_access() {
+    log "INFO" "Testing credential access on discovered services"
+    
+    local access_report="$OUTPUT_DIR/reports/credential_access.txt"
+    > "$access_report"
+    
+    cat > "$access_report" << EOF
+# AKUMA CREDENTIAL ACCESS REPORT
+# Generated: $(date)
+# Username: $USERNAME
+# Domain: ${DOMAIN:-"(local)"}
+# Testing access on discovered services...
+
+===============================================================================
+                        🔐 CREDENTIAL ACCESS RESULTS 🔐
+===============================================================================
+
+EOF
+    
+    # Определяем протоколы для тестирования
+    local protocols=("smb" "ssh" "ldap" "ftp" "winrm" "mssql" "rdp")
+    
+    for protocol in "${protocols[@]}"; do
+        local hosts_file="$OUTPUT_DIR/${protocol}_hosts.txt"
+        
+        if [[ -f "$hosts_file" ]] && [[ -s "$hosts_file" ]]; then
+            local host_count=$(wc -l < "$hosts_file")
+            log "INFO" "Testing $protocol credential access on $host_count hosts"
+            
+            echo "\n--- $protocol ACCESS TESTING ---" >> "$access_report"
+            
+            while IFS= read -r host_line; do
+                [[ -z "$host_line" ]] && continue
+                
+                # Извлекаем IP из формата "N|IP:port"
+                local ip=$(echo "$host_line" | cut -d'|' -f2 | cut -d':' -f1)
+                [[ -z "$ip" ]] && continue
+                
+                # Тестируем доступ
+                test_single_service_access "$protocol" "$ip" "$access_report" &
+                
+                # Ограничиваем параллельность
+                local job_count=$(jobs -r | wc -l)
+                if ((job_count >= MAX_PARALLEL)); then
+                    wait
+                fi
+                
+            done < "$hosts_file"
+            
+            wait  # Ждём завершения всех заданий
+        fi
+    done
+    
+    # Подсчитываем статистику
+    local successful_access=$(grep -c "(Pwn3d!)" "$access_report" 2>/dev/null || echo "0")
+    
+    echo "\n===============================================================================" >> "$access_report"
+    echo "SUMMARY: Found $successful_access hosts with successful credential access" >> "$access_report"
+    echo "===============================================================================" >> "$access_report"
+    
+    log "SUCCESS" "Credential access testing completed: $successful_access successful logins"
+    
+    if [[ $successful_access -gt 0 ]]; then
+        log "ERROR" "CRITICAL: $successful_access hosts compromised with provided credentials!"
+        # Копируем в критичные уязвимости
+        grep "(Pwn3d!)" "$access_report" >> "$OUTPUT_DIR/CRITICAL_VULNERABILITIES.txt" 2>/dev/null || true
+    fi
+}
+
+test_single_service_access() {
+    local protocol="$1"
+    local ip="$2"
+    local report_file="$3"
+    
+    # Пропускаем протоколы, которые не поддерживают простую аутентификацию
+    case "$protocol" in
+        "http"|"dns"|"telnet")
+            return 0
+            ;;
+    esac
+    
+    # Строим команду NetExec
+    local nxc_cmd=("nxc" "$protocol" "$ip")
+    
+    # Добавляем креды
+    nxc_cmd+=("-u" "$USERNAME" "-p" "$PASSWORD")
+    if [[ -n "$DOMAIN" ]]; then
+        nxc_cmd+=("-d" "$DOMAIN")
+    fi
+    
+    # Запускаем тест
+    local output
+    if output=$(timeout 30 "${nxc_cmd[@]}" 2>/dev/null); then
+        # Проверяем результат
+        if echo "$output" | grep -q "(Pwn3d!)"; then
+            echo "$output" | grep "(Pwn3d!)" >> "$report_file"
+            log "ERROR" "COMPROMISED: $ip via $protocol with $USERNAME credentials"
+        elif echo "$output" | grep -q "\[+\]"; then
+            echo "$output" | grep "\[+\]" >> "$report_file"
+            log "WARN" "ACCESS: $ip via $protocol - valid credentials (limited access)"
+        fi
+    fi
 }
 
 # ========================================================================
@@ -860,7 +980,7 @@ while [[ $# -gt 0 ]]; do
             shift 2
             ;;
         --subnet)
-            SUBNETS+=("$2")
+            CLI_SUBNETS+=("$2")
             shift 2
             ;;
         --help|-h)
