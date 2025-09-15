@@ -1,4 +1,4 @@
-# 🔥 AKUMA'S ADVANCED LOW-HANGING FRUIT SCANNER v2.0
+# 🔥 ADVANCED LOW-HANGING FRUIT SCANNER v2.0
 
 > **"Your infrastructure just got PWNED by science"** - AKUMA Team
 
@@ -313,7 +313,6 @@ TIMEOUT_PER_HOST=300
 
 ## 📞 ПОДДЕРЖКА
 
-- **GitHub Issues** - [Создать issue](https://github.com/akuma-team/advanced-lowhanging-scanner/issues)
 - **Документация** - [README_v2.md](README_v2.md)
 - **Примеры** - [examples/](examples/)
 
